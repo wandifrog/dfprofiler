@@ -1,0 +1,16 @@
+.DS_Store
+.sass-cache
+.phalcon/*
+!.phalcon/.do-not-delete
+node_modules/
+vendor/
+public/css/
+public/fonts/
+public/js/
+app/config/config.php
+app/cache/*
+!app/cache/index.html
+.vscode/
+.clamp/
+clamp.json
+yarn-error.log

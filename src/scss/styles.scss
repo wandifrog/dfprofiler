@@ -1,0 +1,1094 @@
+/*
+ * MIT License
+ *
+ * Copyright (c) 2017 Juan Timaná
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+// Import custom Bootstrap variables
+@import "bootstrap-variables";
+
+// Import Bootstrap for Sass
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Import Fontawesome for Sass
+@import "../../node_modules/font-awesome/scss/font-awesome";
+
+// Import yamm3 Bootstrap megamenu
+@import "../../vendor/geedmo/yamm3/yamm/_yamm";
+
+// Mixins
+.red-text-shadow {
+  text-shadow: 0px 0px 6px #ff0000;
+}
+
+// Fonts
+@import url(//fonts.googleapis.com/css?family=Special+Elite|Cabin+Sketch|Jolly+Lodger);
+
+// Site's styles
+body {
+  padding-top: 70px;
+  background: #000 url(../images/background.jpg) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  color: #fff;
+  font-family: 'Cabin Sketch', "Helvetica Neue";
+  @extend .red-text-shadow;
+}
+
+a {
+  @include transition(all 0.3s ease-in-out);
+}
+
+.yamm .yamm-content {
+  padding: 10px 15px 20px 15px;
+
+  @media screen and (min-width: 768px) {
+    min-width: 450px;
+  }
+
+  .menu-header {
+    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    color: #fff;
+    @extend .red-text-shadow;
+  }
+
+  li {
+    padding: 3px 0;
+  }
+
+  .overview {
+    padding: 10px 0 5px 0;
+    border-bottom: 1px solid #222;
+    margin-bottom: 10px;
+    margin-top: -10px;
+    background: url(../images/menu-header.jpg);
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Special Elite', "Helvetica Neue";
+      font-size: 20px;
+      @extend .red-text-shadow;
+    }
+  }
+}
+
+.nav-tabs {
+  margin-bottom: 15px;
+}
+
+.nav.nav-pills {
+  li {
+    > a {
+      &:hover, &:focus {
+        background-color: rgba($brand-primary, .3);
+      }
+    }
+  }
+}
+
+.navbar-logo {
+  padding: 10px;
+}
+
+.navbar-brand {
+  padding: 15px 0;
+  font-family: 'Special Elite', "Helvetica Neue";
+  color: #fff !important;
+  margin-right: 25px;
+  @extend .red-text-shadow;
+
+  @media screen and (min-width: 992px) {
+    margin-left: 0 !important;
+  }
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.dropdown-menu {
+  padding: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.bannr {
+  width: 100%;
+
+  .container {
+    border: 0 !important;
+    width: 100%;
+    padding: 0;
+  }
+
+  .banner-img {
+    margin: 0 auto;
+  }
+
+  font {
+    display: none;
+  }
+}
+
+.page-header {
+  border-bottom: 0;
+  color: #fff;
+  @extend .red-text-shadow;
+}
+
+.page-title {
+  margin-top: -20px;
+  padding: 10px 0;
+  color: #fff;
+  font-size: 24px;
+  background-color: rgba(0,0,0,.5);
+  margin-bottom: 35px;
+  font-family: 'Special Elite', "Helvetica Neue";
+  @extend .red-text-shadow;
+
+  @media screen and (min-width: 768px) {
+    padding: 30px 0;
+    font-size: 34px;
+    margin-bottom: 45px;
+    box-shadow: 0px 10px 15px rgba(0,0,0,.5);
+  }
+}
+
+.jumbotron h1 {
+  color: #fff;
+}
+
+#profile-search-tabs {
+  margin-bottom: 0;
+  border-bottom: 0;
+  background-color: rgba(0,0,0,.7);
+
+  > li {
+    margin-bottom: -2px;
+  }
+
+  > li > a {
+    color: #fff;
+    border: 0 !important;
+    border-bottom: 2px solid transparent !important;
+    z-index: 10;
+    font-family: 'Special Elite', "Helvetica Neue";
+    @extend .red-text-shadow;
+  }
+
+  > li.active > a {
+    border-bottom: 2px solid $brand-primary !important;
+  }
+}
+
+.home-search {
+  margin-bottom: 20px;
+
+  .tab-pane {
+    padding: 20px;
+    border: 1px solid $panel-default-border;
+    @extend .with-background;
+  }
+
+  .easy-autocomplete {
+    width: auto !important;
+
+    input {
+      box-shadow: none;
+      border-radius: 0;
+      height: 46px;
+      border-color: $brand-primary;
+    }
+  }
+
+  .easy-autocomplete-container {
+    top: 47px;
+
+    ul {
+      background: #000;
+      border-top: 0;
+
+      li, .easy-autocomplete-container ul .eac-category {
+        border-color: $gray-darker;
+
+        &.selected {
+          background: lighten($gray-base, 12%);
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .alert {
+    margin: 0;
+  }
+
+  .input-group-btn {
+    .btn {
+      background-color: $brand-primary;
+      border-color: $brand-primary;
+      text-transform: uppercase;
+      padding: 12px 12px;
+      @include transition(all .3s ease-in-out);
+
+      &:hover, &:focus {
+        background-color: lighten($brand-primary, 7%);
+      }
+    }
+  }
+}
+
+#multiple .panel-home-search {
+  .panel-body {
+    padding: 20px;
+  }
+}
+
+.panel {
+  .panel-title {
+    @extend .red-text-shadow;
+  }
+}
+
+.panel-records {
+  background-color: transparent;
+
+  .panel-body {
+    padding: 0;
+
+    .table {
+      margin: 0;
+    }
+  }
+}
+
+.with-background {
+  background-color: $panel-bg;
+}
+
+.table {
+  thead th {
+    color: $gray-lighter;
+    @extend .red-text-shadow;
+  }
+
+  td.details-control {
+    cursor: pointer;
+
+    > i:before {
+      content: "\e158";
+    }
+  }
+
+  tr.details td.details-control {
+    > i:before {
+      content: "\e159";
+    }
+  }
+
+  &.table-bordered.dataTable {
+    border-collapse: collapse !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .table-responsive {
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+#profile-header {
+  background: rgba(0,0,0,.5);
+  margin: -20px 0 -41px 0;
+  padding: 8% 0;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    padding: 4% 0;
+  }
+
+  .username-header {
+    text-align: center;
+    margin-bottom: 10px;
+
+    > a {
+      color: #fff;
+      font-size: 36px;
+      font-family: 'Special Elite', "Helvetica Neue";
+      text-decoration: none;
+      line-height: 30px;
+      @extend .red-text-shadow;
+    }
+  }
+
+  .clan {
+    color: $gray-lighter;
+
+    a {
+      color: #003dff;
+      font-weight: bold;
+    }
+  }
+
+  .placeholder.display {
+    width: 50%;
+    margin: 5px auto;
+  }
+}
+
+.profiler {
+  @media screen and (min-width: 992px) {
+    &.equal, &.equal > div[class*='col-'] {
+      display: -webkit-flex;
+      display: flex;
+      flex: 1 1 auto;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .proficiencies-panel {
+      width: 100%;
+      display: table;
+    }
+
+    .separator {
+      border-top: 2px solid $gray-darker;
+      margin-top: 10px;
+      padding-top: 10px;
+    }
+  }
+
+  .panel {
+    width: 100%;
+  }
+
+  h4 {
+    font-size: 1em;
+    margin: 0;
+  }
+
+  .pdata {
+    margin-bottom: 8px;
+    margin-top: 4px;
+  }
+
+  .gps-link {
+    text-align: center;
+
+    a {
+      color: #888;
+
+      &:hover {
+        color: #ccc;
+      }
+    }
+  }
+}
+
+#gps-legend {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 834px;
+}
+
+.placeholder {
+  &.display {
+    height: 20px;
+    background-color: rgba(255,255,255,.25);
+    width: 90%;
+    margin-top: 4px;
+
+    &.username-header {
+      width: 30% !important;
+      margin: 30px auto !important;
+      height: 40px;
+    }
+  }
+}
+
+.container.main {
+  padding-bottom: 40px;
+}
+
+#profile-page,
+#profiles-page {
+  position: relative;
+  padding-bottom: 40px;
+
+  #ajax-loader {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    text-align: center;
+    white-space: nowrap;
+    background: rgba(0,0,0,.7) url(../images/ajax-loader.gif) no-repeat 2% 2%;
+    z-index: 100;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      margin-right: -0.25em;
+    }
+  }
+}
+
+.bigusername {
+  .profiler-username {
+    color: #f00;
+  }
+}
+
+ul#profiler-data-tabs {
+  text-align: center;
+
+  > li {
+    display: inline-block;
+    float: none;
+
+    > a {
+      display: inline-block;
+    }
+  }
+}
+
+.weapon-name {
+  margin-top: -10px;
+  font-weight: bold;
+  color: $gray-lighter;
+}
+
+.mc-value {
+  color: #FF6;
+}
+
+.total-mc-value {
+  color: #11B000;
+}
+
+.profiler-100 {
+  color: #40D636;
+}
+
+.profiler-75 {
+  color: #ECCA47;
+}
+
+.profiler-50 {
+  color: #C85529;
+}
+
+.profiler-25 {
+  color: #991717;
+}
+
+.profiler-0 {
+  color: #FF0000;
+}
+
+.profiler-armor-normal {
+  color: #40D636;
+}
+
+.profiler-armor-scratched {
+  color: #ECCA47;
+}
+
+.profiler-armor-damaged {
+  color: #C85529;
+}
+
+.profiler-armor-broken {
+  color: #991717;
+}
+
+.panel-stats {
+  h4 {
+    margin-bottom: 6px;
+    margin-top: 6px;
+
+    @media screen and (min-width: 992px) {
+      width: 50%;
+      display: inline-block;
+      float: left;
+    }
+  }
+
+  .stats {
+    @media screen and (min-width: 992px) {
+      display: inline-block;
+      float: left;
+    }
+  }
+}
+
+#profiler-statistics {
+  .placeholder {
+    height: 300px;
+    margin-bottom: 35px;
+
+    .legend {
+      > table {
+        width: auto;
+
+        td {
+          padding: 5px;
+        }
+      }
+      > div {
+        background-color: #222 !important;
+      }
+
+      .legendLabel {
+        color: #eee;
+      }
+    }
+  }
+}
+
+#profiler-gps-container {
+  background: transparent;
+  margin: 0 auto 50px auto;
+
+  table {
+    background: transparent;
+  }
+}
+
+.gps-table {
+  width: 100%;
+  background: rgba(0,0,0,.4) !important;
+
+  .coord {
+    width: 17px;
+    height: 17px;
+    border: 1px solid lighten(#000, 25%);
+    opacity: .7;
+    line-height: 1;
+
+    &:hover {
+      -webkit-transform: scale(1.5, 1.5);
+      -moz-transform: scale(1.5, 1.5);
+      -o-transform: scale(1.5, 1.5);
+      -ms-transform: scale(1.5, 1.5);
+      transform: scale(1.5, 1.5);
+      opacity: 1;
+    }
+
+    $outposts: (
+      "x1000.y1000",
+      "x1005.y985",
+      "x1012.y1019",
+      "x1029.y1003",
+      "x1054.y987"
+    );
+
+    @each $outpost in $outposts {
+      &.#{$outpost} {
+        background-color: #00e6ff !important;
+      }
+    }
+
+    // Area separators
+    $horizontal: y1006 y993;
+    @each $area in $horizontal {
+      &.#{$area} {
+        border-bottom: 1px solid lighten(#000, 65%);
+      }
+    }
+
+    $vertical: x1019 x1040;
+    @each $area in $vertical {
+      &.#{$area} {
+        border-right: 1px solid lighten(#000, 65%);
+      }
+    }
+
+    // Blue zone
+    $blue_zone: (
+      "x1000.y991", "x1000.y992", "x1000.y993", "x1000.y994", "x1000.y995"
+      , "x1000.y996", "x1000.y997", "x1000.y998", "x1000.y999", "x1000.y1001"
+      , "x1000.y1002", "x1000.y1003", "x1000.y1004", "x1000.y1005", "x1000.y1006"
+      , "x1000.y1007", "x1000.y1008", "x1000.y1009", "x1001.y992", "x1001.y993"
+      , "x1001.y994", "x1001.y995", "x1001.y996", "x1001.y997", "x1001.y998"
+      , "x1001.y999", "x1001.y1000", "x1001.y1001", "x1001.y1002", "x1001.y1003"
+      , "x1001.y1004", "x1001.y1005", "x1001.y1006", "x1001.y1007", "x1001.y1008"
+      , "x1002.y993", "x1002.y994", "x1002.y995", "x1002.y1000", "x1002.y1003"
+      , "x1002.y1006", "x1003.y994", "x1003.y995", "x1003.y1000", "x1003.y1003"
+      , "x1003.y1006", "x1004.y995", "x1004.y1000", "x1004.y1003", "x1005.y999"
+      , "x1005.y1000", "x1005.y1001", "x1005.y1002", "x1005.y1003", "x1005.y1004"
+      , "x1006.y999", "x1006.y1000", "x1006.y1003", "x1007.y999", "x1007.y1000"
+      , "x1008.y999", "x1008.y1000", "x1008.y1001", "x1009.y1000"
+    );
+
+    @each $area in $blue_zone {
+      &.#{$area} {
+        background-color: #3564ff;
+      }
+    }
+
+    // Green zone
+    $green_zone: (
+      "x1000.y985", "x1000.y986", "x1000.y987", "x1000.y988", "x1000.y989"
+      , "x1000.y990", "x1001.y986", "x1001.y988", "x1001.y989", "x1001.y990"
+      ,"x1001.y991", "x1002.y987", "x1002.y988", "x1002.y989", "x1002.y990"
+      , "x1002.y992", "x1003.y989", "x1003.y990", "x1003.y992", "x1003.y993"
+      , "x1004.y989", "x1004.y990", "x1004.y991", "x1004.y992", "x1004.y993"
+      , "x1004.y994", "x1005.y990", "x1005.y991", "x1005.y992", "x1005.y993"
+      , "x1005.y994", "x1005.y995", "x1006.y991", "x1006.y992", "x1006.y993"
+      , "x1006.y994", "x1006.y995", "x1007.y992", "x1007.y993", "x1007.y994"
+      , "x1007.y995", "x1008.y993", "x1008.y994", "x1008.y995", "x1008.y996"
+      , "x1008.y997", "x1008.y998", "x1009.y994", "x1009.y995", "x1009.y996"
+      , "x1009.y999", "x1010.y995", "x1010.y996", "x1010.y997", "x1010.y998"
+      , "x1010.y999", "x1010.y1000", "x1010.y1001", "x1010.y1002", "x1010.y1003"
+      , "x1010.y1004", "x1010.y1005", "x1011.y996", "x1011.y997", "x1011.y998"
+      , "x1011.y999", "x1011.y1000", "x1011.y1001", "x1011.y1002", "x1012.y997"
+      , "x1012.y999", "x1012.y1000", "x1012.y1001", "x1012.y1002", "x1013.y998"
+      , "x1013.y999", "x1013.y1000", "x1013.y1001", "x1013.y1002", "x1014.y999"
+      , "x1014.y1000", "x1014.y1001", "x1015.y1000", "x1009.y1002", "x1009.y1004"
+      , "x1009.y1005", "x1009.y1006", "x1008.y1002", "x1008.y1002", "x1008.y1003"
+      , "x1008.y1004", "x1008.y1005", "x1008.y1006", "x1008.y1007", "x1007.y1003"
+      , "x1007.y1005", "x1007.y1006", "x1006.y1006", "x1005.y1005", "x1005.y1006"
+      , "x1004.y1006", "x1004.y1007", "x1004.y1008", "x1004.y1009", "x1004.y1010"
+      , "x1004.y1011", "x1002.y1013", "x1001.y1009", "x1001.y1010", "x1001.y1011"
+      , "x1001.y1012", "x1001.y1013", "x1001.y1014", "x1000.y1010", "x1000.y1011"
+      , "x1000.y1012", "x1000.y1013", "x1000.y1014", "x1000.y1015"
+    );
+
+    @each $area in $green_zone {
+      &.#{$area} {
+        background-color: #4a8366;
+      }
+    }
+
+    // Yellow zone
+    $yellow_zone: (
+      "x1000.y981", "x1000.y982", "x1000.y983", "x1000.y984", "x1001.y981"
+      , "x1001.y983", "x1001.y984", "x1002.y981", "x1002.y983", "x1002.y984"
+      , "x1002.y985", "x1002.y986", "x1003.y981", "x1003.y982", "x1003.y983"
+      , "x1003.y984", "x1003.y985", "x1003.y986", "x1004.y981", "x1004.y982"
+      , "x1004.y983", "x1004.y984", "x1004.y985", "x1004.y986", "x1004.y987"
+      , "x1004.y988", "x1005.y981", "x1005.y982", "x1005.y983", "x1005.y984"
+      , "x1006.y981", "x1006.y982", "x1006.y983", "x1006.y984", "x1006.y985"
+      , "x1006.y986", "x1006.y987", "x1006.y988", "x1006.y989", "x1006.y990"
+      , "x1007.y981", "x1007.y982", "x1007.y983", "x1007.y984", "x1007.y985"
+      , "x1007.y986", "x1007.y987", "x1007.y988", "x1007.y989", "x1007.y990"
+      , "x1007.y991", "x1008.y981", "x1008.y983", "x1008.y988", "x1008.y990"
+      , "x1008.y991", "x1008.y992", "x1009.y981", "x1009.y982", "x1009.y983"
+      , "x1009.y984", "x1009.y985", "x1009.y986", "x1009.y987", "x1009.y988"
+      , "x1009.y989", "x1009.y990", "x1009.y991", "x1009.y992", "x1009.y993"
+      , "x1010.y981", "x1010.y982", "x1010.y983", "x1010.y984", "x1010.y985"
+      , "x1010.y986", "x1010.y987", "x1010.y988", "x1010.y989", "x1010.y990"
+      , "x1010.y991", "x1010.y992", "x1010.y993", "x1010.y994", "x1011.y981"
+      , "x1011.y982", "x1011.y986", "x1011.y987", "x1011.y988", "x1011.y990"
+      , "x1011.y992", "x1011.y993", "x1011.y994", "x1011.y995", "x1012.y982"
+      , "x1012.y985", "x1012.y986", "x1012.y987", "x1012.y988", "x1012.y989"
+      , "x1012.y990", "x1012.y991", "x1012.y992", "x1012.y995", "x1013.y983"
+      , "x1013.y984", "x1013.y985", "x1013.y986", "x1013.y987", "x1013.y988"
+      , "x1013.y989", "x1013.y990", "x1013.y991", "x1013.y992", "x1013.y993"
+      , "x1013.y994", "x1013.y995", "x1013.y996", "x1013.y997", "x1014.y984"
+      , "x1014.y985", "x1014.y990", "x1014.y984", "x1014.y992", "x1014.y995"
+      , "x1014.y997", "x1014.y998", "x1015.y985", "x1015.y986", "x1015.y987"
+      , "x1015.y988", "x1015.y989", "x1015.y990", "x1015.y991", "x1015.y992"
+      , "x1015.y993", "x1015.y994", "x1015.y995", "x1015.y997", "x1015.y998"
+      , "x1015.y999", "x1016.y992", "x1016.y995", "x1016.y997", "x1016.y999"
+      , "x1016.y1000", "x1016.y1001", "x1016.y1002", "x1016.y1003", "x1016.y1004"
+      , "x1016.y1005", "x1016.y1006", "x1016.y1007", "x1016.y1008", "x1016.y1009"
+      , "x1016.y1010", "x1016.y1011", "x1016.y1012", "x1016.y1013", "x1016.y1014"
+      , "x1015.y1001", "x1015.y1002", "x1015.y1003", "x1015.y1004", "x1015.y1005"
+      , "x1015.y1007", "x1015.y1009", "x1015.y1010", "x1015.y1011", "x1015.y1012"
+      , "x1015.y1013", "x1015.y1014", "x1014.y1002", "x1014.y1003", "x1014.y1004"
+      , "x1014.y1005", "x1014.y1006", "x1014.y1007", "x1014.y1008", "x1014.y1009"
+      , "x1014.y1010", "x1014.y1011", "x1014.y1012", "x1014.y1013", "x1014.y1014"
+      , "x1013.y1005", "x1013.y1006", "x1013.y1007", "x1013.y1014", "x1012.y1005"
+      , "x1012.y1006", "x1012.y1007", "x1012.y1008", "x1012.y1009", "x1012.y1010"
+      , "x1012.y1011", "x1012.y1012", "x1012.y1013", "x1012.y1014", "x1011.y1005"
+      , "x1011.y1006", "x1011.y1007", "x1011.y1008", "x1011.y1009", "x1011.y1010"
+      , "x1011.y1011", "x1011.y1012", "x1011.y1013", "x1011.y1014", "x1011.y1015"
+      , "x1011.y1016", "x1011.y1017", "x1011.y1018", "x1011.y1019", "x1010.y1006"
+      , "x1010.y1007", "x1010.y1008", "x1010.y1009", "x1009.y1007", "x1009.y1008"
+      , "x1009.y1009", "x1008.y1008", "x1008.y1009", "x1008.y1010", "x1008.y1011"
+      , "x1008.y1012", "x1008.y1013", "x1008.y1014", "x1009.y1014", "x1010.y1014"
+      , "x1004.y1012", "x1004.y1013", "x1004.y1014", "x1004.y1015", "x1004.y1016"
+      , "x1004.y1017", "x1004.y1018", "x1004.y1019", "x1003.y1013", "x1003.y1019"
+      , "x1002.y1019", "x1001.y1019", "x1000.y1019", "x1000.y1018", "x1017.y990"
+      , "x1017.y991", "x1017.y992", "x1017.y993", "x1017.y994", "x1017.y995"
+      , "x1017.y996", "x1017.y997", "x1017.y998", "x1017.y999", "x1017.y1000"
+      , "x1017.y1001", "x1017.y1002", "x1017.y1003", "x1017.y1004", "x1017.y1005"
+      , "x1017.y1006", "x1017.y1007", "x1017.y1008", "x1017.y1009", "x1017.y1010"
+      , "x1017.y1011", "x1017.y1012", "x1017.y1013", "x1018.y990", "x1018.y991"
+      , "x1018.y992", "x1018.y993", "x1018.y994", "x1018.y995", "x1018.y988"
+      , "x1018.y997", "x1018.y999", "x1018.y1000", "x1018.y1001", "x1018.y1002"
+      , "x1018.y1006", "x1018.y1007", "x1018.y1009", "x1018.y1010", "x1019.y989"
+      , "x1019.y990", "x1019.y991", "x1019.y992", "x1019.y993", "x1019.y994"
+      , "x1019.y995", "x1019.y997", "x1019.y999", "x1019.y1000", "x1019.y1001"
+      , "x1019.y1002", "x1019.y1006", "x1019.y1007", "x1019.y1009", "x1019.y1010"
+      , "x1020.y990", "x1020.y991", "x1020.y992", "x1020.y993", "x1020.y994"
+      , "x1020.y995", "x1020.y996", "x1020.y997", "x1020.y998", "x1020.y999"
+      , "x1020.y1000", "x1020.y1001", "x1020.y1002", "x1020.y1006", "x1020.y1007"
+      , "x1020.y1008", "x1020.y1009", "x1020.y1010", "x1021.y992", "x1021.y994"
+      , "x1021.y995", "x1021.y996", "x1021.y997", "x1021.y998", "x1021.y999"
+      , "x1021.y1000", "x1021.y1001", "x1021.y1002", "x1021.y1003", "x1021.y1004"
+      , "x1021.y1005", "x1021.y1006", "x1021.y1007", "x1021.y1008", "x1021.y1009"
+      , "x1022.y992", "x1022.y993", "x1022.y994", "x1022.y995", "x1022.y996"
+      , "x1022.y997", "x1022.y998", "x1022.y999", "x1022.y1000", "x1022.y1002"
+      , "x1022.y1004", "x1022.y1007", "x1022.y1008", "x1023.y993", "x1023.y994"
+      , "x1023.y995", "x1023.y996", "x1023.y997", "x1023.y998", "x1023.y999"
+      , "x1023.y1000", "x1023.y1001", "x1023.y1002", "x1023.y1003", "x1023.y1004"
+      , "x1023.y1005", "x1023.y1006", "x1023.y1007", "x1024.y994", "x1024.y995"
+      , "x1024.y996", "x1024.y997", "x1024.y998", "x1024.y999", "x1024.y1000"
+      , "x1024.y1001", "x1024.y1002", "x1024.y1003", "x1024.y1004", "x1024.y1005"
+      , "x1024.y1006", "x1025.y995", "x1025.y996", "x1025.y997", "x1025.y998"
+      , "x1025.y999", "x1025.y1000", "x1025.y1001", "x1025.y1002", "x1025.y1003"
+      , "x1025.y1004", "x1025.y1005", "x1026.y996", "x1026.y997", "x1026.y998"
+      , "x1026.y999", "x1026.y1000", "x1026.y1001", "x1026.y1002", "x1026.y1003"
+      , "x1027.y997", "x1027.y998", "x1027.y999", "x1027.y1000", "x1028.y998"
+      , "x1028.y999", "x1028.y1000", "x1028.y1001", "x1028.y1002", "x1029.y999"
+      , "x1029.y1000", "x1029.y1001", "x1030.y1000"
+    );
+
+    @each $area in $yellow_zone {
+      &.#{$area} {
+        background-color: #b8b239;
+      }
+    }
+
+    // Orange zone
+    $orange_zone: (
+      "x1012.y981", "x1013.y981", "x1013.y982", "x1014.y981", "x1014.y982"
+      , "x1014.y983", "x1015.y981", "x1015.y982", "x1015.y983", "x1015.y984"
+      , "x1016.y981", "x1016.y982", "x1016.y983", "x1016.y984", "x1016.y985"
+      , "x1017.y981", "x1017.y982", "x1017.y983", "x1017.y985", "x1018.y981"
+      , "x1018.y982", "x1018.y983", "x1018.y985", "x1018.y986", "x1018.y987"
+      , "x1019.y981", "x1019.y982", "x1019.y983", "x1019.y984", "x1019.y985"
+      , "x1019.y988", "x1020.y981", "x1020.y982", "x1020.y983", "x1020.y984"
+      , "x1020.y985", "x1020.y986", "x1020.y988", "x1021.y981", "x1021.y982"
+      , "x1021.y983", "x1021.y984", "x1022.y981", "x1022.y982", "x1022.y983"
+      , "x1022.y984", "x1022.y985", "x1022.y986", "x1022.y987", "x1022.y988"
+      , "x1022.y989", "x1022.y990", "x1022.y991", "x1023.y981", "x1023.y982"
+      , "x1023.y983", "x1023.y984", "x1023.y986", "x1023.y987", "x1023.y988"
+      , "x1023.y989", "x1023.y990", "x1023.y991", "x1023.y992", "x1024.y981"
+      , "x1024.y982", "x1024.y983", "x1024.y984", "x1024.y985", "x1024.y986"
+      , "x1024.y987", "x1024.y988", "x1024.y989", "x1024.y990", "x1024.y991"
+      , "x1024.y992", "x1024.y993", "x1025.y981", "x1025.y992", "x1026.y981"
+      , "x1026.y992", "x1026.y993", "x1026.y995", "x1027.y981", "x1027.y984"
+      , "x1027.y985", "x1027.y986", "x1027.y987", "x1027.y988", "x1027.y988"
+      , "x1027.y989", "x1027.y990", "x1027.y991", "x1027.y992", "x1027.y993"
+      , "x1027.y994", "x1027.y995", "x1027.y996", "x1028.y981", "x1028.y987"
+      , "x1028.y988", "x1028.y989", "x1028.y990", "x1028.y991", "x1028.y992"
+      , "x1028.y993", "x1028.y994", "x1028.y995", "x1028.y996", "x1028.y997"
+      , "x1029.y981", "x1029.y987", "x1029.y993", "x1029.y995", "x1029.y996"
+      , "x1029.y997", "x1029.y998", "x1030.y981", "x1030.y987", "x1030.y993"
+      , "x1030.y994", "x1030.y995", "x1030.y996", "x1030.y997", "x1030.y998"
+      , "x1030.y999", "x1031.y986", "x1031.y987", "x1031.y988", "x1031.y989"
+      , "x1031.y990", "x1031.y991", "x1031.y992", "x1031.y993", "x1031.y994"
+      , "x1031.y994", "x1031.y995", "x1031.y996", "x1031.y997", "x1031.y998"
+      , "x1031.y999", "x1032.y983", "x1032.y984", "x1032.y985", "x1032.y986"
+      , "x1032.y987", "x1032.y988", "x1032.y989", "x1032.y990", "x1032.y991"
+      , "x1032.y992", "x1032.y993", "x1032.y994", "x1032.y995", "x1032.y996"
+      , "x1032.y997", "x1032.y998", "x1031.y1007", "x1031.y1009", "x1031.y1012"
+      , "x1031.y1014", "x1031.y1016", "x1031.y1018", "x1032.y1007", "x1032.y1009"
+      , "x1032.y1012", "x1032.y1016", "x1033.y992", "x1033.y993", "x1033.y994"
+      , "x1033.y995", "x1033.y996", "x1033.y997", "x1033.y998", "x1033.y999"
+      , "x1033.y1007", "x1033.y1009", "x1033.y1012", "x1033.y1013", "x1033.y1014"
+      , "x1033.y1015", "x1033.y1016", "x1034.y992", "x1034.y993", "x1034.y995"
+      , "x1034.y996", "x1034.y997", "x1034.y998", "x1034.y999", "x1034.y1005"
+      , "x1034.y1006", "x1034.y1007", "x1034.y1008", "x1034.y1009", "x1034.y1010"
+      , "x1034.y1012", "x1035.y992", "x1035.y993", "x1035.y996", "x1035.y997"
+      , "x1035.y998", "x1035.y1005", "x1035.y1006", "x1035.y1007", "x1035.y1008"
+      , "x1035.y1009", "x1035.y1010", "x1035.y1012", "x1036.y992", "x1036.y993"
+      , "x1036.y996", "x1036.y997", "x1036.y998", "x1036.y1005", "x1036.y1006"
+      , "x1036.y1007", "x1036.y1008", "x1036.y1009", "x1036.y1010", "x1036.y1011"
+      , "x1036.y1012", "x1036.y1013", "x1037.y992", "x1037.y993", "x1037.y994"
+      , "x1037.y995", "x1037.y996", "x1037.y997", "x1037.y998", "x1037.y1005"
+      , "x1037.y1006", "x1037.y1007", "x1037.y1008", "x1037.y1009", "x1037.y1010"
+      , "x1037.y1011", "x1037.y1012", "x1038.y992", "x1038.y996", "x1038.y997"
+      , "x1038.y998", "x1038.y999", "x1038.y1000", "x1038.y1001", "x1038.y1002"
+      , "x1038.y1003", "x1038.y1005", "x1038.y1006", "x1038.y1007", "x1038.y1008"
+      , "x1038.y1009", "x1038.y1010", "x1038.y1011", "x1039.y990", "x1039.y991"
+      , "x1039.y992", "x1039.y993", "x1039.y994", "x1039.y995", "x1039.y996"
+      , "x1039.y997", "x1039.y998", "x1039.y999", "x1039.y1000", "x1039.y1001"
+      , "x1039.y1002", "x1039.y1003", "x1039.y1004", "x1039.y1005", "x1039.y1006"
+      , "x1039.y1007", "x1039.y1008", "x1039.y1009", "x1039.y1010", "x1040.y996"
+      , "x1040.y997", "x1040.y999", "x1040.y1000", "x1040.y1001", "x1040.y1003"
+      , "x1040.y1004", "x1040.y1005", "x1040.y1006", "x1041.y995", "x1041.y996"
+      , "x1041.y997", "x1041.y999", "x1041.y1000", "x1041.y1001", "x1041.y1003"
+      , "x1041.y1004", "x1041.y1005", "x1041.y1006", "x1041.y1007", "x1042.y995"
+      , "x1042.y996", "x1042.y997", "x1042.y999", "x1042.y1000", "x1042.y1001"
+      , "x1042.y1003", "x1042.y1004", "x1042.y1006", "x1042.y1007", "x1043.y994"
+      , "x1043.y995", "x1043.y996", "x1043.y997", "x1043.y999", "x1043.y1000"
+      , "x1043.y1001", "x1043.y1003", "x1043.y1004", "x1043.y1005", "x1043.y1006"
+      , "x1044.y995", "x1044.y996", "x1044.y997", "x1044.y998", "x1044.y999"
+      , "x1044.y1000", "x1044.y1001", "x1044.y1002", "x1044.y1003", "x1044.y1004"
+      , "x1044.y1005", "x1045.y996", "x1045.y997", "x1045.y998", "x1045.y999"
+      , "x1045.y1000", "x1045.y1001", "x1045.y1004", "x1046.y997", "x1046.y998"
+      , "x1046.y999", "x1046.y1000", "x1046.y1001", "x1046.y1002", "x1046.y1003"
+      , "x1047.y998", "x1047.y999", "x1047.y1000", "x1047.y1001", "x1048.y999"
+      , "x1048.y1000", "x1048.y1001", "x1049.y1000", "x1030.y1001", "x1030.y1002"
+      , "x1030.y1003", "x1030.y1004", "x1030.y1005", "x1030.y1007", "x1030.y1009"
+      , "x1030.y1012", "x1030.y1013", "x1030.y1014", "x1030.y1015", "x1030.y1016"
+      , "x1030.y1017", "x1030.y1018", "x1030.y1019", "x1029.y1002", "x1029.y1004"
+      , "x1029.y1005", "x1029.y1006", "x1029.y1007", "x1029.y1009", "x1029.y1014"
+      , "x1029.y1015", "x1029.y1016", "x1029.y1017", "x1029.y1018", "x1029.y1019"
+      , "x1028.y1003", "x1028.y1004", "x1028.y1007", "x1028.y1009", "x1028.y1014"
+      , "x1028.y1015", "x1028.y1016", "x1028.y1018", "x1028.y1019", "x1027.y1007"
+      , "x1027.y1009", "x1027.y1014", "x1027.y1015", "x1027.y1016", "x1027.y1017"
+      , "x1027.y1018", "x1027.y1019", "x1026.y1007", "x1026.y1009", "x1026.y1011"
+      , "x1026.y1012", "x1026.y1014", "x1026.y1015", "x1026.y1016", "x1026.y1018"
+      , "x1026.y1019", "x1025.y1006", "x1025.y1007", "x1025.y1008", "x1025.y1009"
+      , "x1025.y1010", "x1025.y1011", "x1025.y1012", "x1025.y1013", "x1025.y1014"
+      , "x1025.y1015", "x1025.y1016", "x1025.y1017", "x1025.y1018", "x1025.y1019"
+      , "x1024.y1007", "x1024.y1008", "x1024.y1009", "x1024.y1010", "x1024.y1011"
+      , "x1024.y1012", "x1024.y1013", "x1024.y1014", "x1024.y1015", "x1024.y1016"
+      , "x1024.y1017", "x1024.y1018", "x1024.y1019", "x1023.y1008", "x1023.y1009"
+      , "x1023.y1010", "x1023.y1011", "x1023.y1012", "x1023.y1014", "x1023.y1018"
+      , "x1023.y1019", "x1022.y1008", "x1022.y1009", "x1022.y1010", "x1022.y1011"
+      , "x1022.y1012", "x1022.y1013", "x1022.y1014", "x1022.y1015", "x1022.y1016"
+      , "x1022.y1017", "x1022.y1018", "x1022.y1019", "x1021.y1010", "x1021.y1014"
+      , "x1021.y1018", "x1021.y1019", "x1020.y1011", "x1020.y1012", "x1020.y1013"
+      , "x1020.y1014", "x1020.y1015", "x1020.y1016", "x1020.y1017", "x1020.y1018"
+      , "x1020.y1019", "x1019.y1014", "x1019.y1019", "x1018.y1014", "x1018.y1015"
+      , "x1018.y1016", "x1018.y1017", "x1018.y1018", "x1018.y1019", "x1017.y1014"
+      , "x1017.y1015", "x1017.y1016", "x1017.y1017", "x1017.y1018", "x1017.y1019"
+      , "x1016.y1015", "x1016.y1016", "x1016.y1017", "x1016.y1018", "x1016.y1019"
+      , "x1015.y1017", "x1015.y1018", "x1015.y1019", "x1014.y1019", "x1013.y1019"
+    );
+
+    @each $area in $orange_zone {
+      &.#{$area} {
+        background-color: #ff8500;
+      }
+    }
+
+    // Red zone
+    $red_zone: (
+      "x1031.y981", "x1032.y981", "x1032.y982", "x1033.y981", "x1039.y981"
+      , "x1039.y982", "x1039.y983", "x1039.y984", "x1039.y986", "x1039.y989"
+      , "x1040.y981", "x1040.y982", "x1040.y983", "x1040.y984", "x1040.y985"
+      , "x1040.y986", "x1041.y982", "x1041.y986", "x1042.y985", "x1042.y986"
+      , "x1043.y985", "x1043.y986", "x1043.y987", "x1043.y988", "x1043.y989"
+      , "x1043.y990", "x1043.y991", "x1043.y992", "x1043.y993", "x1044.y985"
+      , "x1044.y986", "x1044.y987", "x1044.y988", "x1044.y989", "x1044.y990"
+      , "x1044.y991", "x1044.y992", "x1044.y993", "x1045.y986", "x1045.y987"
+      , "x1045.y988", "x1045.y993", "x1045.y995", "x1046.y987", "x1046.y990"
+      , "x1046.y991", "x1046.y992", "x1046.y993", "x1046.y994", "x1046.y995"
+      , "x1046.y996", "x1047.y988", "x1047.y989", "x1047.y990", "x1047.y991"
+      , "x1047.y992", "x1047.y993", "x1047.y995", "x1047.y997", "x1048.y989"
+      , "x1048.y990", "x1048.y991", "x1048.y992", "x1048.y993", "x1048.y994"
+      , "x1048.y995", "x1048.y996", "x1048.y997", "x1048.y998", "x1049.y990"
+      , "x1049.y991", "x1049.y992", "x1049.y993", "x1049.y994", "x1049.y995"
+      , "x1049.y996", "x1049.y997", "x1049.y998", "x1049.y999", "x1050.y991"
+      , "x1050.y992", "x1050.y993", "x1050.y994", "x1050.y995", "x1050.y996"
+      , "x1050.y997", "x1050.y998", "x1050.y999", "x1050.y1000", "x1050.y1006"
+      , "x1051.y992", "x1051.y993", "x1051.y994", "x1051.y995", "x1051.y996"
+      , "x1051.y997", "x1051.y998", "x1051.y999", "x1051.y1000", "x1051.y1001"
+      , "x1051.y1002", "x1051.y1003", "x1051.y1004", "x1051.y1005", "x1051.y1006"
+      , "x1051.y1007", "x1051.y1008", "x1052.y993", "x1052.y994", "x1052.y995"
+      , "x1052.y996", "x1052.y997", "x1052.y998", "x1052.y1000", "x1052.y1001"
+      , "x1052.y1002", "x1052.y1005", "x1052.y1006", "x1053.y994", "x1053.y995"
+      , "x1053.y996", "x1053.y997", "x1053.y998", "x1053.y999", "x1053.y1000"
+      , "x1053.y1001", "x1053.y1002", "x1053.y1003", "x1053.y1004", "x1053.y1005"
+      , "x1053.y1006", "x1054.y995", "x1054.y996", "x1054.y997", "x1054.y998"
+      , "x1054.y999", "x1054.y1000", "x1054.y1001", "x1054.y1002", "x1054.y1003"
+      , "x1054.y1005", "x1055.y996", "x1055.y997", "x1055.y998", "x1055.y999"
+      , "x1055.y1000", "x1055.y1001", "x1055.y1002", "x1055.y1003", "x1056.y997"
+      , "x1056.y998", "x1056.y999", "x1056.y1000", "x1056.y1002", "x1057.y998"
+      , "x1057.y999", "x1057.y1000", "x1058.y999", "x1058.y1000", "x1058.y1001"
+      , "x1049.y1001", "x1049.y1006", "x1049.y1007", "x1049.y1008", "x1049.y1009"
+      , "x1049.y1010", "x1048.y1002", "x1048.y1003", "x1048.y1004", "x1048.y1005"
+      , "x1048.y1006", "x1048.y1007", "x1048.y1008", "x1048.y1009", "x1048.y1010"
+      , "x1048.y1011", "x1047.y1004", "x1047.y1006", "x1047.y1011", "x1047.y1012"
+      , "x1046.y1004", "x1046.y1005", "x1046.y1006", "x1046.y1012", "x1046.y1013"
+      , "x1045.y1006", "x1045.y1013", "x1044.y1006", "x1044.y1007", "x1044.y1013"
+      , "x1044.y1014", "x1044.y1015", "x1043.y1007", "x1043.y1016", "x1042.y1013"
+      , "x1042.y1014", "x1042.y1015", "x1042.y1016", "x1042.y1017", "x1040.y1019"
+      , "x1039.y1011", "x1039.y1012", "x1039.y1013", "x1039.y1014", "x1039.y1015"
+      , "x1039.y1016", "x1039.y1017", "x1039.y1018", "x1039.y1019", "x1038.y1012"
+      , "x1038.y1014", "x1038.y1015", "x1038.y1016", "x1038.y1017", "x1038.y1018"
+      , "x1038.y1019", "x1037.y1013", "x1037.y1014", "x1037.y1016", "x1037.y1017"
+      , "x1037.y1018", "x1037.y1019", "x1036.y1014", "x1036.y1015", "x1036.y1016"
+      , "x1036.y1017", "x1036.y1018", "x1036.y1019", "x1035.y1017", "x1035.y1019"
+      , "x1034.y1017", "x1034.y1018", "x1034.y1019", "x1033.y1017", "x1033.y1018"
+      , "x1033.y1019", "x1032.y1018", "x1032.y1019", "x1031.y1019"
+    );
+
+    @each $area in $red_zone {
+      &.#{$area} {
+        background-color: #d32800;
+      }
+    }
+
+    // Dark Red zone
+    $darkred_zone: (
+      "x1041.y981", "x1042.y981", "x1042.y982", "x1043.y981", "x1043.y982"
+      , "x1044.y981", "x1044.y982", "x1045.y981", "x1045.y982", "x1045.y983"
+      , "x1045.y984", "x1045.y985", "x1046.y981", "x1046.y982", "x1046.y985"
+      , "x1046.y986", "x1047.y981", "x1047.y982", "x1047.y983", "x1047.y984"
+      , "x1047.y985", "x1047.y986", "x1047.y987", "x1048.y985", "x1048.y986"
+      , "x1048.y987", "x1048.y988", "x1049.y981", "x1049.y982", "x1049.y983"
+      , "x1049.y984", "x1049.y985", "x1049.y986", "x1049.y987", "x1049.y988"
+      , "x1049.y989", "x1050.y981", "x1050.y982", "x1050.y983", "x1050.y984"
+      , "x1050.y985", "x1050.y986", "x1050.y987", "x1050.y988", "x1050.y989"
+      , "x1050.y990", "x1051.y982", "x1051.y985", "x1051.y986", "x1051.y987"
+      , "x1051.y988", "x1051.y989", "x1051.y990", "x1051.y991", "x1052.y985"
+      , "x1052.y986", "x1052.y987", "x1052.y989", "x1052.y990", "x1052.y991"
+      , "x1052.y992", "x1053.y984", "x1053.y985", "x1053.y986", "x1053.y987"
+      , "x1053.y988", "x1053.y989", "x1053.y990", "x1053.y991", "x1053.y992"
+      , "x1053.y993", "x1054.y985", "x1054.y986", "x1054.y988", "x1054.y989"
+      , "x1054.y990", "x1054.y991", "x1054.y992", "x1054.y993", "x1054.y994"
+      , "x1055.y986", "x1055.y987", "x1055.y988", "x1055.y989", "x1055.y990"
+      , "x1055.y991", "x1055.y992", "x1055.y993", "x1055.y994", "x1055.y995"
+      , "x1056.y987", "x1056.y988", "x1056.y989", "x1056.y990", "x1056.y991"
+      , "x1056.y992", "x1056.y993", "x1056.y994", "x1056.y995", "x1056.y996"
+      , "x1057.y988", "x1057.y989", "x1057.y990", "x1057.y991", "x1057.y992"
+      , "x1057.y993", "x1057.y995", "x1057.y997", "x1058.y989", "x1058.y990"
+      , "x1058.y991", "x1058.y992", "x1058.y993", "x1058.y994", "x1058.y995"
+      , "x1058.y996", "x1058.y997", "x1058.y998", "x1058.y1002", "x1058.y1003"
+      , "x1058.y1004", "x1058.y1005", "x1058.y1006", "x1057.y1006", "x1057.y1007"
+      , "x1057.y1008", "x1057.y1009", "x1057.y1010", "x1057.y1011", "x1057.y1012"
+      , "x1052.y1016", "x1052.y1017", "x1051.y1016", "x1050.y1016", "x1049.y1011"
+      , "x1049.y1012", "x1049.y1013", "x1049.y1014", "x1049.y1015", "x1049.y1016"
+      , "x1049.y1017", "x1049.y1018", "x1049.y1019", "x1048.y1012", "x1048.y1013"
+      , "x1048.y1014", "x1048.y1015", "x1048.y1016", "x1048.y1017", "x1048.y1018"
+      , "x1048.y1019", "x1047.y1013", "x1047.y1014", "x1047.y1015", "x1047.y1016"
+      , "x1047.y1017", "x1047.y1018", "x1047.y1019", "x1046.y1016", "x1046.y1017"
+      , "x1046.y1018", "x1046.y1019", "x1045.y1016", "x1045.y1017", "x1045.y1018"
+      , "x1045.y1019", "x1044.y1016", "x1044.y1017", "x1044.y1018", "x1044.y1019"
+      , "x1043.y1018", "x1043.y1019", "x1042.y1018", "x1042.y1019", "x1041.y1019"
+    );
+
+    @each $area in $darkred_zone {
+      &.#{$area} {
+        background-color: #901e00;
+      }
+    }
+
+    // Black zone
+    $black_zone: (
+      "x1051.y981", "x1052.y981", "x1052.y982", "x1053.y981", "x1053.y982"
+      , "x1053.y983", "x1054.y981", "x1054.y982", "x1054.y983", "x1054.y984"
+      , "x1055.y981", "x1055.y982", "x1055.y985", "x1056.y981", "x1056.y982"
+      , "x1056.y983", "x1056.y984", "x1056.y985", "x1056.y986", "x1057.y981"
+      , "x1057.y985", "x1057.y986", "x1057.y987", "x1058.y981", "x1058.y982"
+      , "x1058.y983", "x1058.y984", "x1058.y985", "x1058.y986", "x1058.y987"
+      , "x1058.y988", "x1058.y1014", "x1058.y1015", "x1058.y1016", "x1057.y1013"
+      , "x1057.y1014", "x1057.y1015", "x1057.y1016", "x1057.y1017", "x1057.y1018"
+      , "x1056.y1018", "x1055.y1018", "x1054.y1018", "x1053.y1018", "x1052.y1018"
+    );
+
+    @each $area in $black_zone {
+      &.#{$area} {
+        background-color: #230000;
+      }
+    }
+
+    // Arena
+    &.x1042.y1010 {
+      background-color: #ff0056;
+    }
+  }
+}
+
+ul.clan-records {
+  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+
+  > li {
+    width: 100%;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+      width: 20%;
+    }
+
+    .record {
+      margin: 10px;
+      padding: 30px 0;
+      border: 1px solid darken($brand-primary, 8%);
+      box-shadow: 0 0 10px darken($brand-primary, 6%);
+      @extend .with-background;
+      @include transition(all .3s ease-in-out);
+
+      &:hover {
+        background-color: #000;
+      }
+
+      h4 {
+        color: #fff;
+        font-family: 'Jolly Lodger', "Helvetica Neue";
+        font-size: 26px;
+        @extend .red-text-shadow;
+
+        @media screen and (min-width: 768px) {
+          font-size: 32px;
+        }
+      }
+
+      span {
+        color: darken($gray-lighter, 7%);
+        padding: 10px 0;
+        display: block;
+      }
+    }
+  }
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.7);
+  color: #444;
+  font-size: 12px;
+  padding: 30px 0;
+  text-align: center;
+}

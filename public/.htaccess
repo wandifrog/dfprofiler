@@ -1,0 +1,16 @@
+AddDefaultCharset UTF-8
+
+# this block will only work if you have mod_rewrite in your Apache server
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # uncomment to redirect from no WWW to WWW
+    #RewriteCond %{HTTP_HOST} !^www\. [NC]
+    #RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+    # this enables clean URLs, do not remove or modify
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond ^(.*)$ !^favicon\.ico
+    RewriteRule ^(.*)$ index.php?_url=/$1 [QSA,L]
+</IfModule>
